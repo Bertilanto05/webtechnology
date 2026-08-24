@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Beran News Network</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+
+        html{
+            scroll-behavior:smooth;
+        }
+
+        body{
+            margin:0;
+            font-family:Arial,sans-serif;
+            background:linear-gradient(to bottom,#eef4ff,#dce8f5);
+        }
+
+        .topbar{
+            background:#002855;
+            text-align:center;
+            padding:18px;
+            box-shadow:0 2px 10px gray;
+        }
+
+        .topbar a{
+            color:white;
+            text-decoration:none;
+            margin:15px;
+            font-size:18px;
+            font-weight:bold;
+        }
+
+        .topbar a:hover{
+            color:#ffd700;
+        }
+
+        .header{
+            background:white;
+            text-align:center;
+            padding:25px;
+            box-shadow:0 2px 10px lightgray;
+        }
+
+        .header h1{
+            color:#003366;
+            margin:0;
+            font-size:42px;
+        }
+
+        .header p{
+            color:#666;
+            font-size:18px;
+        }
+
+        .banner img{
+            width:100%;
+            height:450px;
+            object-fit:cover;
+        }
+
+        .headline{
+            background:white;
+            margin:25px;
+            padding:35px;
+            text-align:center;
+            border-radius:15px;
+            box-shadow:0 4px 15px lightgray;
+        }
+
+        .headline h1{
+            color:#003366;
+            font-size:55px;
+            margin:0;
+        }
+
+        .headline p{
+            font-size:24px;
+            color:#555;
+        }
+
+        .section{
+            background:white;
+            margin:25px;
+            padding:25px;
+            border-radius:15px;
+            box-shadow:0 4px 15px lightgray;
+        }
+
+        .section h2{
+            color:#003366;
+            border-bottom:3px solid #003366;
+            padding-bottom:8px;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+        }
+
+        th{
+            background:#003366;
+            color:white;
+        }
+
+        th,td{
+            border:1px solid #ccc;
+            padding:12px;
+            text-align:center;
+        }
+
+        tr:nth-child(even){
+            background:#f2f2f2;
+        }
+
+        form input,
+        form select,
+        form textarea{
+            width:100%;
+            padding:12px;
+            margin-top:5px;
+            border:1px solid #ccc;
+            border-radius:5px;
+            box-sizing:border-box;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"]{
+            width:auto;
+        }
+
+        input[type="submit"],
+        input[type="reset"]{
+            width:auto;
+            background:#003366;
+            color:white;
+            border:none;
+            padding:12px 20px;
+            border-radius:5px;
+            cursor:pointer;
+        }
+
+        input[type="submit"]:hover,
+        input[type="reset"]:hover{
+            background:#0055aa;
+        }
+
+        .footer{
+            background:#002855;
+            color:white;
+            text-align:center;
+            padding:25px;
+            margin-top:30px;
+        }
+
+        .footer p{
+            margin:0;
+        }
+
+        @media screen and (max-width:768px){
+
+            .topbar a{
+                font-size:14px;
+                margin:5px;
+            }
+
+            .headline h1{
+                font-size:30px;
+            }
+
+            .headline p{
+                font-size:18px;
+            }
+
+            .banner img{
+                height:220px;
+            }
+
+            table{
+                font-size:12px;
+            }
+
+            .section{
+                margin:10px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body id="home">
+
+    <!-- Navigation -->
+
+    <div class="topbar">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#news">Latest News</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#contact">Contact Us</a>
+    </div>
+
+    <!-- Header -->
+
+    <div class="header">
+        <h1>BERAN NEWS NETWORK</h1>
+        <p>Your Trusted Source for Daily News</p>
+    </div>
+
+    <!-- Banner Image -->
+
+    <div class="banner">
+        <img src="https://img.etimg.com/photo/103941527.cms"
+            alt="News Banner">
+    </div>
+
+    <!-- Headline -->
+
+    <div class="headline">
+        <h1>TOP NEWS PORTAL</h1>
+        <p>Delivering Fast, Reliable and Updated News Every Day</p>
+    </div>
+
+    <!-- About Section -->
+
+    <div class="section" id="about">
+
+        <h2>About Us</h2>
+
+        <p>
+            Beran News Network (BNN) is an online news portal that provides
+            readers with the latest updates on politics, sports, technology,
+            education, business and entertainment. Our mission is to deliver
+            reliable and accurate news from around the world.
+        </p>
+
+    </div>
+
+    <!-- Latest News -->
+
+    <div class="section" id="news">
+
+        <h2>Latest News</h2>
+
+        <ul>
+            <li>Artificial Intelligence continues to shape industries.</li>
+            <li>International sports tournaments attract millions of viewers.</li>
+            <li>Technology companies introduce innovative products.</li>
+            <li>Global leaders discuss economic growth and development.</li>
+        </ul>
+
+    </div>
+
+    <!-- Schedule -->
+
+    <div class="section" id="schedule">
+
+        <h2>Daily News Schedule</h2>
+
+        <table>
+
+            <tr>
+                <th>Time</th>
+                <th>Program</th>
+                <th>Category</th>
+            </tr>
+
+            <tr>
+                <td>9:00 AM</td>
+                <td>Morning Headlines</td>
+                <td>National</td>
+            </tr>
+
+            <tr>
+                <td>1:00 PM</td>
+                <td>Afternoon Bulletin</td>
+                <td>Sports</td>
+            </tr>
+
+            <tr>
+                <td>7:00 PM</td>
+                <td>Prime Time News</td>
+                <td>World News</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <!-- Contact -->
+
+    <div class="section" id="contact">
+
+        <h2>Contact Us</h2>
+
+        <p>Email : berannews@gmail.com</p>
+        <p>Phone : +91 98765 43210</p>
+
+        <br>
+
+        <a href="mailto:berannews@gmail.com">Email Us</a>
+
+        <br><br>
+
+        <a href="https://timesofindia.indiatimes.com" target="_blank">
+            Visit Times of India
+        </a>
+
+    </div>
+
+    <!-- Footer -->
+
+    <div class="footer">
+        <p>© 2026 Beran News Network | All Rights Reserved</p>
+    </div>
+
+</body>
+
+</html>
