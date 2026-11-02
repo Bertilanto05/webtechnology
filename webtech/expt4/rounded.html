@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Beran News Portal</title>
+    <style>
+        /* ===== Common Style ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #eef3f8;
+            line-height: 1.6;
+        }
+        /* ===== Navigation ===== */
+        nav {
+            background-color: #102a43;
+            padding: 15px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* keeps the menu at the top while scrolling */
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border-bottom: 4px solid #e63946;
+        }
+        .logo {
+            color: white;
+            font-size: 26px;
+            letter-spacing: 1px;
+        }
+        .logo span {
+            color: #e63946;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 0;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: yellow;
+        }
+        /* ===== Hero Section ===== */
+        .hero {
+            min-height: 540px;
+            /* dark layer on top of the background image */
+            background-image:
+                linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+                url("newsroom-background.svg");
+            background-color: #102a43;
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 80px 10%;
+        }
+        .hero div {
+            max-width: 700px;
+        }
+        .hero h1 {
+            font-family: Georgia, serif;
+            font-size: 60px;
+            line-height: 1.1;
+        }
+        .hero p {
+            font-size: 20px;
+            margin: 20px 0 28px;
+        }
+        /* ===== Button ===== */
+        .btn {
+            display: inline-block;
+            background-color: #e63946;
+            color: white;
+            padding: 12px 28px;
+            text-decoration: none;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #b91f2c;
+        }
+        /* ===== Sections ===== */
+        section {
+            padding: 70px 8%;
+        }
+        h2 {
+            color: #102a43;
+            margin-bottom: 10px;
+            font-size: 34px;
+        }
+        h2 + p {
+            color: gray;
+            margin-bottom: 30px;
+        }
+        /* ===== News Cards ===== */
+        .cards {
+            display: flex;
+            flex-wrap: wrap;   /* cards move to next line on small screens */
+            gap: 25px;
+        }
+        .card {
+            background-color: white;
+            width: 250px;
+            flex-grow: 1;      /* cards share the empty space equally */
+            border-radius: 10px;
+            border-top: 5px solid #e63946;
+            box-shadow: 0 4px 12px rgba(16, 42, 67, 0.15);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        /* card moves up a little when you hover on it */
+        .card:hover {
+            transform: translateY(-8px);
+        }
+        .card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            display: block;
+            background-color: #d6e1eb;
+        }
+        .card h3 {
+            color: #102a43;
+            margin: 15px;
+        }
+        .card p {
+            margin: 0 15px 20px;
+            color: #555;
+        }
+        /* ===== Breaking News ===== */
+        .breaking-news {
+            background-color: #e63946;
+            color: white;
+            padding: 35px;
+            text-align: center;
+            border-radius: 10px;
+            border-left: 8px solid #ffcc66;
+            box-shadow: 0 6px 15px rgba(16, 42, 67, 0.2);
+        }
+        .breaking-news h2 {
+            color: white;
+        }
+        .breaking-news p {
+            margin-bottom: 0;
+        }
+        /* ===== Table ===== */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(16, 42, 67, 0.12);
+        }
+        th {
+            background-color: #102a43;
+            color: white;
+            padding: 15px;
+        }
+        td {
+            padding: 15px;
+            text-align: center;
+        }
+        /* colour every second row */
+        tr:nth-child(even) {
+            background-color: #eaf2f8;
+        }
+        /* row changes colour on hover */
+        tr:hover td {
+            background-color: #d6e8f7;
+        }
+        /* ===== Contact Form ===== */
+        form {
+            max-width: 600px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(16, 42, 67, 0.12);
+        }
+        label {
+            font-weight: bold;
+            color: #102a43;
+        }
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #c5d0da;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+        /* highlight the box you are typing in */
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #e63946;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.2);
+        }
+        /* ===== Footer ===== */
+        footer {
+            background-color: #102a43;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-top: 4px solid #e63946;
+        }
+        /* ===== Mobile Screen ===== */
+        @media (max-width: 700px) {
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+            nav ul li {
+                margin: 0 10px;
+            }
+            .hero h1 {
+                font-size: 40px;
+            }
+            th,
+            td {
+                padding: 10px 5px;
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <h2 class="logo">BERAN <span>NEWS</span></h2>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#news">Latest News</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <!-- Home Section -->
+    <header class="hero" id="home">
+        <div>
+            <h1>Your Daily News Starts Here</h1>
+            <p>
+                Get the latest news about world, technology,
+                sports and business.
+            </p>
+            <a href="#news" class="btn">View Latest News</a>
+        </div>
+    </header>
+    <!-- Latest News -->
+    <section id="news">
+        <h2>Latest News</h2>
+        <p>Read the latest updates from different news categories.</p>
+        <div class="cards">
+            <!-- World News -->
+            <div class="card">
+                <img src="world-news.svg" alt="World news illustration">
+                <h3>World News</h3>
+                <p>Get updates about important events happening around the world.</p>
+            </div>
+            <!-- Technology -->
+            <div class="card">
+                <img src="technology-news.svg" alt="Technology news illustration">
+                <h3>Technology</h3>
+                <p>Discover the latest technology, gadgets and innovations.</p>
+            </div>
+            <!-- Sports -->
+            <div class="card">
+                <img src="sports-news.svg" alt="Sports news illustration">
+                <h3>Sports</h3>
+                <p>Get updates about matches, players and sports events.</p>
+            </div>
+            <!-- Business -->
+            <div class="card">
+                <img src="business-news.svg" alt="Business news illustration">
+                <h3>Business</h3>
+                <p>Stay updated about companies, markets and business news.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Breaking News -->
+    <section>
+        <div class="breaking-news">
+            <h2>Breaking News</h2>
+            <p>Follow the latest important updates from around the world.</p>
+        </div>
+    </section>
+    <!-- Categories -->
+    <section id="categories">
+        <h2>News Categories</h2>
+        <p>Check the popular topics in different categories.</p>
+        <table>
+
+            <tr>
+                <th>Category</th>
+                <th>Topic</th>
+                <th>Update</th>
+            </tr>
+            <tr>
+                <td>World</td>
+                <td>Global Events</td>
+                <td>Latest Updates</td>
+            </tr>
+            <tr>
+                <td>Technology</td>
+                <td>Artificial Intelligence</td>
+                <td>Trending</td>
+            </tr>
+            <tr>
+                <td>Sports</td>
+                <td>International Matches</td>
+                <td>Live Coverage</td>
+            </tr>
+            <tr>
+                <td>Business</td>
+                <td>Stock Market</td>
+                <td>Market Updates</td>
+            </tr>
+        </table>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Send your news tip or feedback.</p>
+        <form>
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="9876543210"
+                   pattern="[0-9]{10}" required>
+            <label for="category">News Category</label>
+            <select id="category">
+                <option>World News</option>
+                <option>Technology</option>
+                <option>Sports</option>
+                <option>Business</option>
+            </select>
+            <label for="message">Message</label>
+            <textarea id="message" rows="4" placeholder="Write your message here"></textarea>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Beran News Portal</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#d8f1ed"/>
+      <stop offset="1" stop-color="#f9d7bd"/>
+    </linearGradient>
+    <pattern id="lines" width="56" height="56" patternUnits="userSpaceOnUse">
+      <path d="M0 55h56" stroke="#267c7b" stroke-opacity=".12"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="900" fill="url(#paper)"/>
+  <rect width="1600" height="900" fill="url(#lines)"/>
+  <circle cx="1300" cy="160" r="220" fill="#f4b267" opacity=".55"/>
+  <circle cx="260" cy="710" r="250" fill="#8dcfca" opacity=".5"/>
+  <path d="M1000 680c85-180 190-260 320-250 145 11 170 121 280 250z" fill="#267c7b" opacity=".28"/>
+  <rect x="1010" y="285" width="360" height="245" rx="18" fill="#fffaf1" transform="rotate(8 1010 285)"/>
+  <rect x="1060" y="335" width="210" height="18" rx="9" fill="#e87552" transform="rotate(8 1060 335)"/>
+  <rect x="1060" y="385" width="260" height="12" rx="6" fill="#267c7b" opacity=".5" transform="rotate(8 1060 385)"/>
+  <rect x="1060" y="425" width="180" height="12" rx="6" fill="#267c7b" opacity=".5" transform="rotate(8 1060 425)"/>
+  <path d="M860 710c45-140 130-190 255-150 100 32 120 95 155 150z" fill="#e87552" opacity=".75"/>
+</svg>
